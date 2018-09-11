@@ -1,0 +1,49 @@
+unit Dm.Cadastro.Localizacao;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Dm.DataBase, Data.FMTBcd, Datasnap.DBClient,
+  Datasnap.Provider, Data.DB, Data.SqlExpr;
+
+type
+  TDmCadastroLocalizacao = class(TDataModule)
+    SdsPais: TSQLDataSet;
+    DspPais: TDataSetProvider;
+    CdsPais: TClientDataSet;
+    SdsPaisPAI_CODIGO: TIntegerField;
+    SdsPaisPAI_NOME: TStringField;
+    SdsPaisPAI_SIGLA: TStringField;
+    SdsPaisPAI_BACEN: TIntegerField;
+    CdsPaisPAI_CODIGO: TIntegerField;
+    CdsPaisPAI_NOME: TStringField;
+    CdsPaisPAI_SIGLA: TStringField;
+    CdsPaisPAI_BACEN: TIntegerField;
+    procedure CdsPaisAfterPost(DataSet: TDataSet);
+    procedure CdsPaisAfterDelete(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmCadastroLocalizacao: TDmCadastroLocalizacao;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDmCadastroLocalizacao.CdsPaisAfterDelete(DataSet: TDataSet);
+begin
+cdspais.ApplyUpdates(0);
+end;
+
+procedure TDmCadastroLocalizacao.CdsPaisAfterPost(DataSet: TDataSet);
+begin
+cdspais.ApplyUpdates(0);
+end;
+
+end.

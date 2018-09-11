@@ -1,0 +1,29 @@
+unit Dm.Cadastro.Geral;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Dm.DataBase, Data.FMTBcd, Datasnap.DBClient,
+  Datasnap.Provider, Data.DB, Data.SqlExpr;
+
+type
+  TDmCadastroGeral = class(TDataModule)
+    SdsProduto: TSQLDataSet;
+    DpsProduto: TDataSetProvider;
+    CdsProduto: TClientDataSet;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmCadastroGeral: TDmCadastroGeral;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

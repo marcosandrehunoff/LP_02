@@ -1,0 +1,81 @@
+object DmCadastroLocalizacao: TDmCadastroLocalizacao
+  OldCreateOrder = False
+  Height = 292
+  Width = 287
+  object SdsPais: TSQLDataSet
+    CommandText = 'select pai_codigo, pai_nome, Pai_sigla, pai_bacen from pais'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = DmDataBase.Conexao
+    Left = 104
+    Top = 72
+    object SdsPaisPAI_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'PAI_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object SdsPaisPAI_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'PAI_NOME'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object SdsPaisPAI_SIGLA: TStringField
+      DisplayLabel = 'SIGLA'
+      FieldName = 'PAI_SIGLA'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 3
+    end
+    object SdsPaisPAI_BACEN: TIntegerField
+      DisplayLabel = 'BACEN'
+      FieldName = 'PAI_BACEN'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+  end
+  object DspPais: TDataSetProvider
+    DataSet = SdsPais
+    Options = [poAllowCommandText, poUseQuoteChar]
+    UpdateMode = upWhereKeyOnly
+    Left = 104
+    Top = 128
+  end
+  object CdsPais: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DspPais'
+    AfterPost = CdsPaisAfterPost
+    AfterDelete = CdsPaisAfterDelete
+    Left = 104
+    Top = 200
+    object CdsPaisPAI_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'PAI_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object CdsPaisPAI_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'PAI_NOME'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object CdsPaisPAI_SIGLA: TStringField
+      DisplayLabel = 'SIGLA'
+      FieldName = 'PAI_SIGLA'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 3
+    end
+    object CdsPaisPAI_BACEN: TIntegerField
+      DisplayLabel = 'BACEN'
+      FieldName = 'PAI_BACEN'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+  end
+end

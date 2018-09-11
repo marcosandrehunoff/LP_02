@@ -1,0 +1,198 @@
+object FrmVenda: TFrmVenda
+  Left = 0
+  Top = 0
+  Caption = 'Realiza'#231#227'o de Venda'
+  ClientHeight = 499
+  ClientWidth = 767
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  OldCreateOrder = False
+  Position = poDefault
+  Visible = True
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 767
+    Height = 49
+    Align = alTop
+    TabOrder = 0
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 400
+      Height = 47
+      Align = alLeft
+      TabOrder = 0
+      ExplicitHeight = 39
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 49
+    Width = 767
+    Height = 160
+    Align = alTop
+    TabOrder = 1
+    ExplicitTop = 41
+    object Label1: TLabel
+      Left = 8
+      Top = 6
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+    end
+    object Label2: TLabel
+      Left = 144
+      Top = 6
+      Width = 23
+      Height = 13
+      Caption = 'Data'
+    end
+    object Label3: TLabel
+      Left = 280
+      Top = 6
+      Width = 33
+      Height = 13
+      Caption = 'Cliente'
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 51
+      Width = 765
+      Height = 108
+      Align = alBottom
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+    object DBEdit1: TDBEdit
+      Left = 8
+      Top = 25
+      Width = 130
+      Height = 21
+      TabOrder = 1
+    end
+    object DBEdit2: TDBEdit
+      Left = 144
+      Top = 24
+      Width = 130
+      Height = 21
+      TabOrder = 2
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 280
+      Top = 24
+      Width = 465
+      Height = 21
+      TabOrder = 3
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 215
+    Width = 767
+    Height = 284
+    Align = alBottom
+    TabOrder = 2
+    object Label4: TLabel
+      Left = 25
+      Top = 64
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+    end
+    object Label5: TLabel
+      Left = 167
+      Top = 64
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+    end
+    object Label6: TLabel
+      Left = 25
+      Top = 120
+      Width = 56
+      Height = 13
+      Caption = 'Quantidade'
+    end
+    object Label7: TLabel
+      Left = 167
+      Top = 120
+      Width = 53
+      Height = 13
+      Caption = 'R$ Unit'#225'rio'
+    end
+    object Label8: TLabel
+      Left = 309
+      Top = 120
+      Width = 40
+      Height = 13
+      Caption = 'R$ Total'
+    end
+    object DBGrid2: TDBGrid
+      Left = 1
+      Top = 180
+      Width = 765
+      Height = 103
+      Align = alBottom
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+    object DBNavigator2: TDBNavigator
+      Left = 25
+      Top = 22
+      Width = 270
+      Height = 25
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 25
+      Top = 83
+      Width = 136
+      Height = 21
+      TabOrder = 2
+    end
+    object DBLookupComboBox2: TDBLookupComboBox
+      Left = 167
+      Top = 83
+      Width = 578
+      Height = 21
+      TabOrder = 3
+    end
+    object DBEdit4: TDBEdit
+      Left = 25
+      Top = 139
+      Width = 136
+      Height = 21
+      TabOrder = 4
+    end
+    object DBEdit5: TDBEdit
+      Left = 167
+      Top = 139
+      Width = 136
+      Height = 21
+      TabOrder = 5
+    end
+    object DBEdit6: TDBEdit
+      Left = 309
+      Top = 139
+      Width = 136
+      Height = 21
+      TabOrder = 6
+    end
+  end
+end

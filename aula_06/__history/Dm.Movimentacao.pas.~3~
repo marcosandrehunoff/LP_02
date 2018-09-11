@@ -1,0 +1,49 @@
+unit Dm.Movimentacao;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Dm.DataBase, Dm.Cadastro.Geral, Data.FMTBcd,
+  Data.DB, Datasnap.DBClient, Datasnap.Provider, Data.SqlExpr;
+
+type
+  TDmMovimentacao = class(TDataModule)
+    SdsVenda: TSQLDataSet;
+    DspVenda: TDataSetProvider;
+    CdsVenda: TClientDataSet;
+    SdsVendaVEN_CLI_CODIGO: TIntegerField;
+    SdsVendaVEN_CODIGO: TIntegerField;
+    SdsVendaVEN_DATA: TDateField;
+    SdsVendaVEN_OBS: TStringField;
+    CdsVendaVEN_CODIGO: TIntegerField;
+    CdsVendaVEN_DATA: TDateField;
+    CdsVendaVEN_OBS: TStringField;
+    CdsVendaVEN_CLI_CODIGO: TIntegerField;
+    procedure CdsVendaAfterPost(DataSet: TDataSet);
+    procedure CdsVendaAfterDelete(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DmMovimentacao: TDmMovimentacao;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDmMovimentacao.CdsVendaAfterDelete(DataSet: TDataSet);
+begin
+  CdsVenda.ApplyUpdates(0);
+end;
+
+procedure TDmMovimentacao.CdsVendaAfterPost(DataSet: TDataSet);
+begin
+  CdsVenda.ApplyUpdates(0);
+end;
+
+end.

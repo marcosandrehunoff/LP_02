@@ -1,0 +1,77 @@
+object DmMovimentacao: TDmMovimentacao
+  OldCreateOrder = False
+  Height = 243
+  Width = 262
+  object SdsVenda: TSQLDataSet
+    CommandText = 'select VEN_CLI_CODIGO, VEN_CODIGO, VEN_DATA, VEN_OBS from VENDA'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = DmDataBase.Conexao
+    Left = 32
+    Top = 24
+    object SdsVendaVEN_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO VENDA'
+      FieldName = 'VEN_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object SdsVendaVEN_DATA: TDateField
+      DisplayLabel = 'DATA VENDA'
+      FieldName = 'VEN_DATA'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+    object SdsVendaVEN_OBS: TStringField
+      DisplayLabel = 'OBSERVA'#199#195'O'
+      FieldName = 'VEN_OBS'
+      ProviderFlags = [pfInUpdate]
+      Size = 500
+    end
+    object SdsVendaVEN_CLI_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO DO CLIENTE'
+      FieldName = 'VEN_CLI_CODIGO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+  end
+  object DspVenda: TDataSetProvider
+    DataSet = SdsVenda
+    Options = [poAllowCommandText, poUseQuoteChar]
+    UpdateMode = upWhereKeyOnly
+    Left = 32
+    Top = 96
+  end
+  object CdsVenda: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DspVenda'
+    AfterPost = CdsVendaAfterPost
+    AfterDelete = CdsVendaAfterDelete
+    Left = 32
+    Top = 168
+    object CdsVendaVEN_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO VENDA'
+      FieldName = 'VEN_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object CdsVendaVEN_DATA: TDateField
+      DisplayLabel = 'DATA VENDA'
+      FieldName = 'VEN_DATA'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+    object CdsVendaVEN_OBS: TStringField
+      DisplayLabel = 'OBSERVA'#199#195'O'
+      FieldName = 'VEN_OBS'
+      ProviderFlags = [pfInUpdate]
+      Size = 500
+    end
+    object CdsVendaVEN_CLI_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO DO CLIENTE'
+      FieldName = 'VEN_CLI_CODIGO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+  end
+end

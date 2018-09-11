@@ -1,0 +1,96 @@
+unit un01;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Datasnap.DBClient;
+
+type
+  TFormulario = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    GroupBox1: TGroupBox;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    Edit1: TEdit;
+    Button1: TButton;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label14: TLabel;
+    Label13: TLabel;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    Label15: TLabel;
+    DataSource1: TDataSource;
+    ClientDataSet1: TClientDataSet;
+    ClientDataSet1Codigo: TIntegerField;
+    ClientDataSet1Descricao: TStringField;
+    ClientDataSet1Unidade: TStringField;
+    ClientDataSet1Fornecedor: TStringField;
+    ClientDataSet1Data: TDateField;
+    ClientDataSet1Quantidade: TFloatField;
+    ClientDataSet1Unitario: TCurrencyField;
+    ClientDataSet1Total: TCurrencyField;
+    ClientDataSet1EstoqueQTD: TAggregateField;
+    ClientDataSet1EstoqueVLR: TAggregateField;
+    procedure FormCreate(Sender: TObject);
+    procedure ClientDataSet1CalcFields(DataSet: TDataSet);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Formulario: TFormulario;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormulario.ClientDataSet1CalcFields(DataSet: TDataSet);
+  begin
+    if (not ClientDataSet1.FieldbyName('Quantidade').IsNull) and
+      (not ClientDataSet1.FieldbyName('Unitario').IsNull) Then
+    begin
+      ClientDataSet1.FieldbyName('Total').Value :=
+        ClientDataSet1.FieldbyName('Quantidade').Value *
+        ClientDataSet1.FieldbyName('Unitario').Value;
+    end;
+  end;
+
+procedure TFormulario.FormCreate(Sender: TObject);
+const
+  cDataFile = 'Dados.xml';
+begin
+  ClientDataSet1.FileName := ExtractFilePath(Application.ExeName) + cDataFile;
+  if FileExists(ClientDataSet1.FileName) then
+    ClientDataSet1.Open
+  else
+    ClientDataSet1.CreateDataSet
+end;
+
+end.

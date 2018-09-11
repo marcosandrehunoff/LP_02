@@ -1,0 +1,220 @@
+object FrmCliente: TFrmCliente
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Cliente'
+  ClientHeight = 409
+  ClientWidth = 731
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel2: TPanel
+    Left = 0
+    Top = 49
+    Width = 731
+    Height = 192
+    Align = alTop
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 8
+      Top = 6
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+    end
+    object Label2: TLabel
+      Left = 151
+      Top = 6
+      Width = 27
+      Height = 13
+      Caption = 'Nome'
+    end
+    object Label3: TLabel
+      Left = 528
+      Top = 6
+      Width = 54
+      Height = 13
+      Caption = 'CPF / CNJP'
+    end
+    object Label4: TLabel
+      Left = 8
+      Top = 53
+      Width = 45
+      Height = 13
+      Caption = 'Endere'#231'o'
+    end
+    object Label5: TLabel
+      Left = 400
+      Top = 53
+      Width = 28
+      Height = 13
+      Caption = 'Bairro'
+    end
+    object Label6: TLabel
+      Left = 568
+      Top = 53
+      Width = 19
+      Height = 13
+      Caption = 'CEP'
+    end
+    object Label7: TLabel
+      Left = 8
+      Top = 101
+      Width = 63
+      Height = 13
+      Caption = 'Cidade Nome'
+    end
+    object Label8: TLabel
+      Left = 8
+      Top = 147
+      Width = 42
+      Height = 13
+      Caption = 'Telefone'
+    end
+    object Label9: TLabel
+      Left = 176
+      Top = 147
+      Width = 24
+      Height = 13
+      Caption = 'Email'
+    end
+    object DBEdit1: TDBEdit
+      Left = 8
+      Top = 24
+      Width = 137
+      Height = 21
+      DataField = 'CLI_CODIGO'
+      DataSource = DsCliente
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 151
+      Top = 24
+      Width = 371
+      Height = 21
+      DataField = 'CLI_NOME'
+      DataSource = DsCliente
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 528
+      Top = 24
+      Width = 193
+      Height = 21
+      DataField = 'CLI_CPFCNPJ'
+      DataSource = DsCliente
+      TabOrder = 2
+    end
+    object DBEdit4: TDBEdit
+      Left = 8
+      Top = 72
+      Width = 386
+      Height = 21
+      DataField = 'CLI_ENDERECO'
+      DataSource = DsCliente
+      TabOrder = 3
+    end
+    object DBEdit5: TDBEdit
+      Left = 400
+      Top = 72
+      Width = 162
+      Height = 21
+      DataField = 'CLI_BAIRRO'
+      DataSource = DsCliente
+      TabOrder = 4
+    end
+    object DBEdit6: TDBEdit
+      Left = 568
+      Top = 72
+      Width = 153
+      Height = 21
+      DataField = 'CLI_CEP'
+      DataSource = DsCliente
+      TabOrder = 5
+    end
+    object DBEdit7: TDBEdit
+      Left = 8
+      Top = 165
+      Width = 162
+      Height = 21
+      DataField = 'CLI_TELEFONE'
+      DataSource = DsCliente
+      TabOrder = 7
+    end
+    object DBEdit8: TDBEdit
+      Left = 176
+      Top = 165
+      Width = 545
+      Height = 21
+      DataField = 'CLI_EMAIL'
+      DataSource = DsCliente
+      TabOrder = 8
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 8
+      Top = 120
+      Width = 713
+      Height = 21
+      DataField = 'CID_NAME'
+      DataSource = DsCliente
+      TabOrder = 6
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 241
+    Width = 731
+    Height = 176
+    Align = alTop
+    TabOrder = 1
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 729
+      Height = 176
+      Align = alTop
+      DataSource = DsCliente
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 731
+    Height = 49
+    Align = alTop
+    TabOrder = 2
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 536
+      Height = 47
+      DataSource = DsCliente
+      Align = alLeft
+      TabOrder = 0
+    end
+  end
+  object DsCliente: TDataSource
+    DataSet = DmCadastroGeral.CdsCliente
+    Left = 564
+    Top = 8
+  end
+  object DsCidade: TDataSource
+    DataSet = DmCadastroLocalizacao.CdsCidade
+    Left = 632
+    Top = 8
+  end
+end

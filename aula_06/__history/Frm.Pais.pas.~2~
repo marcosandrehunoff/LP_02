@@ -1,0 +1,31 @@
+unit Frm.Pais;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Cadastro.Localizacao, Data.DB,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TFrmPais = class(TForm)
+    DsPais: TDataSource;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPais: TFrmPais;
+
+implementation
+
+{$R *.dfm}
+
+end.

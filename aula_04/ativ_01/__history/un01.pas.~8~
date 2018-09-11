@@ -1,0 +1,169 @@
+unit un01;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Datasnap.DBClient;
+
+type
+  TFormulario = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Panel3: TPanel;
+    GroupBox1: TGroupBox;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBEdit6: TDBEdit;
+    DBEdit7: TDBEdit;
+    DBEdit8: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    Edit1: TEdit;
+    Button1: TButton;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label14: TLabel;
+    Label13: TLabel;
+    DBEdit9: TDBEdit;
+    DBEdit10: TDBEdit;
+    Label15: TLabel;
+    DataSource1: TDataSource;
+    ClientDataSet1: TClientDataSet;
+    ClientDataSet1Codigo: TIntegerField;
+    ClientDataSet1Descricao: TStringField;
+    ClientDataSet1Unidade: TStringField;
+    ClientDataSet1Fornecedor: TStringField;
+    ClientDataSet1Data: TDateField;
+    ClientDataSet1Quantidade: TFloatField;
+    ClientDataSet1Unitario: TCurrencyField;
+    ClientDataSet1Total: TCurrencyField;
+    ClientDataSet1EstoqueQTD: TAggregateField;
+    ClientDataSet1EstoqueVLR: TAggregateField;
+    procedure FormCreate(Sender: TObject);
+    procedure ClientDataSet1CalcFields(DataSet: TDataSet);
+    procedure ClientDataSet1BeforePost(DataSet: TDataSet);
+    procedure ComboBox1Change(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Formulario: TFormulario;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFormulario.Button1Click(Sender: TObject);
+begin
+ if ComboBox2.Text = 'Locate' then
+  begin
+    ClientDataSet1.Locate(ComboBox1.Text, Edit1.Text, []);
+  end;
+
+  if (ComboBox2.Text = 'Findkey') then
+  begin
+
+  end;
+
+  case ComboBox2.ItemIndex of
+    0:
+      begin
+
+      end;
+    1:
+      begin
+
+      end;
+end;
+
+procedure TFormulario.ClientDataSet1BeforePost(DataSet: TDataSet);
+begin
+if ClientDataSet1Codigo.IsNull then
+begin
+ ShowMessage('voce nao imformeu um Codigo');
+ Abort
+end;
+
+if ClientDataSet1Descricao.IsNull then
+begin
+ ShowMessage('voce nao imformeu uma Descricao');
+ Abort
+end;
+if ClientDataSet1Unidade.IsNull then
+begin
+ ShowMessage('voce nao imformeu uma Unidade');
+ Abort
+end;
+if ClientDataSet1Data.IsNull then
+begin
+ ShowMessage('voce nao imformeu uma Data');
+ Abort
+end;
+if ClientDataSet1Fornecedor.IsNull then
+begin
+ ShowMessage('voce nao imformeu um Fornecedor');
+ Abort
+end;if ClientDataSet1Quantidade.IsNull then
+begin
+ ShowMessage('voce nao imformeu uma Quantidade');
+ Abort
+end;
+if ClientDataSet1Unitario.IsNull then
+begin
+ ShowMessage('voce nao imformeu um Unitario');
+ Abort
+end;
+end;
+
+procedure TFormulario.ClientDataSet1CalcFields(DataSet: TDataSet);
+  begin
+    if (not ClientDataSet1.FieldbyName('Quantidade').IsNull) and
+      (not ClientDataSet1.FieldbyName('Unitario').IsNull) Then
+    begin
+      ClientDataSet1.FieldbyName('Total').Value :=
+        ClientDataSet1.FieldbyName('Quantidade').Value *
+        ClientDataSet1.FieldbyName('Unitario').Value;
+    end;
+  end;
+
+procedure TFormulario.ComboBox1Change(Sender: TObject);
+begin
+
+  if (ComboBox2.Text = 'Indexar') or (ComboBox2.Text = 'Limpar') or
+    (ComboBox2.Text = 'Limpar Filtro') then
+    Edit1.Enabled := false;
+end;
+
+procedure TFormulario.FormCreate(Sender: TObject);
+const
+  cDataFile = 'Dados.xml';
+begin
+  ClientDataSet1.FileName := ExtractFilePath(Application.ExeName) + cDataFile;
+  if FileExists(ClientDataSet1.FileName) then
+    ClientDataSet1.Open
+  else
+    ClientDataSet1.CreateDataSet
+end;
+
+end.

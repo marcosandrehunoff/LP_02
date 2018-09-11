@@ -1,0 +1,23 @@
+program Projeto_Banco;
+
+uses
+  Vcl.Forms,
+  Frm.Principal in 'Frm.Principal.pas' {FrmPrincipal},
+  Dm.DataBase in 'Dm.DataBase.pas' {DmDataBase: TDataModule},
+  Dm.Cadastro.Localizacao in 'Dm.Cadastro.Localizacao.pas' {DmCadastroLocalizacao: TDataModule},
+  Frm.Pais in 'Frm.Pais.pas' {FrmPais},
+  Frm.Estado in 'Frm.Estado.pas' {FrmEstado},
+  Frm.Cidade in 'Frm.Cidade.pas' {FrmCidade},
+  Dm.Cadastro.Geral in 'Dm.Cadastro.Geral.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.CreateForm(TDmDataBase, DmDataBase);
+  Application.CreateForm(TDmCadastroLocalizacao, DmCadastroLocalizacao);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

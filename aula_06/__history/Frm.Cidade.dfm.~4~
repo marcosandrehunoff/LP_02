@@ -1,0 +1,174 @@
+object FrmCidade: TFrmCidade
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Cidade'
+  ClientHeight = 335
+  ClientWidth = 702
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 702
+    Height = 65
+    Align = alTop
+    TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = -6
+    ExplicitWidth = 630
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 456
+      Height = 63
+      DataSource = DsCidade
+      Align = alLeft
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 65
+    Width = 702
+    Height = 112
+    Align = alTop
+    TabOrder = 1
+    ExplicitLeft = 1
+    ExplicitTop = 70
+    ExplicitWidth = 630
+    object Label1: TLabel
+      Left = 8
+      Top = 6
+      Width = 39
+      Height = 16
+      Caption = 'C'#243'digo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 120
+      Top = 6
+      Width = 33
+      Height = 16
+      Caption = 'Nome'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 496
+      Top = 6
+      Width = 26
+      Height = 16
+      Caption = 'IBGE'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 8
+      Top = 62
+      Width = 38
+      Height = 16
+      Caption = 'Estado'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object DBLookupComboBox1: TDBLookupComboBox
+      Left = 8
+      Top = 86
+      Width = 593
+      Height = 21
+      DataField = 'CID_EST_CODIGO'
+      DataSource = DsCidade
+      KeyField = 'EST_CODIGO'
+      ListField = 'EST_NOME'
+      ListSource = DsEstado
+      TabOrder = 0
+    end
+    object DBEdit1: TDBEdit
+      Left = 8
+      Top = 28
+      Width = 97
+      Height = 21
+      DataField = 'CID_CODIGO'
+      DataSource = DsCidade
+      TabOrder = 1
+    end
+    object DBEdit2: TDBEdit
+      Left = 120
+      Top = 28
+      Width = 361
+      Height = 21
+      DataField = 'CID_NOME'
+      DataSource = DsCidade
+      TabOrder = 2
+    end
+    object DBEdit3: TDBEdit
+      Left = 496
+      Top = 28
+      Width = 105
+      Height = 21
+      DataField = 'CID_IBGE'
+      DataSource = DsCidade
+      TabOrder = 3
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 177
+    Width = 702
+    Height = 161
+    Align = alTop
+    TabOrder = 2
+    ExplicitTop = 176
+    ExplicitWidth = 630
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 700
+      Height = 160
+      Align = alTop
+      DataSource = DsCidade
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+  end
+  object DsCidade: TDataSource
+    DataSet = DmCadastroLocalizacao.CdsCidade
+    Left = 488
+    Top = 16
+  end
+  object DsEstado: TDataSource
+    DataSet = DmCadastroLocalizacao.CdsEstado
+    Left = 552
+    Top = 16
+  end
+end

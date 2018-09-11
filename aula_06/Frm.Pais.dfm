@@ -1,0 +1,159 @@
+object FrmPais: TFrmPais
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Pa'#237's '
+  ClientHeight = 335
+  ClientWidth = 630
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 630
+    Height = 57
+    Align = alTop
+    TabOrder = 0
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 480
+      Height = 55
+      DataSource = DsPais
+      Align = alLeft
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 57
+    Width = 630
+    Height = 112
+    Align = alTop
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 16
+      Top = 6
+      Width = 39
+      Height = 16
+      Caption = 'C'#243'digo'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 208
+      Top = 6
+      Width = 33
+      Height = 16
+      Caption = 'Nome'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 64
+      Width = 28
+      Height = 16
+      Caption = 'Sigla'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 208
+      Top = 62
+      Width = 38
+      Height = 16
+      Caption = 'BACEN'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object DBEdit1: TDBEdit
+      Left = 16
+      Top = 29
+      Width = 185
+      Height = 21
+      DataField = 'PAI_CODIGO'
+      DataSource = DsPais
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 207
+      Top = 28
+      Width = 410
+      Height = 21
+      DataField = 'PAI_NOME'
+      DataSource = DsPais
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 17
+      Top = 85
+      Width = 185
+      Height = 21
+      DataField = 'PAI_SIGLA'
+      DataSource = DsPais
+      TabOrder = 2
+    end
+    object DBEdit4: TDBEdit
+      Left = 208
+      Top = 84
+      Width = 201
+      Height = 21
+      DataField = 'PAI_BACEN'
+      DataSource = DsPais
+      TabOrder = 3
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 169
+    Width = 630
+    Height = 176
+    Align = alTop
+    TabOrder = 2
+    object DBGrid1: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 628
+      Height = 176
+      Align = alTop
+      DataSource = DsPais
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+  end
+  object DsPais: TDataSource
+    DataSet = DmCadastroLocalizacao.CdsPais
+    Left = 504
+    Top = 16
+  end
+end

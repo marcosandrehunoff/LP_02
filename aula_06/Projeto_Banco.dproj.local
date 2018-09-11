@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/08/30 20:14:50.000.661,=C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/08/30 20:26:54.000.956,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Principal.pas=C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/08/30 20:26:54.000.956,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Principal.dfm=C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/08/30 20:27:16.000.800,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Projeto_Banco.dproj=C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018/08/30 20:33:29.000.021,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/08/30 20:34:09.000.688,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmUntProjeto_Banco.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/08/30 20:34:09.000.688,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmUntProjeto_Banco.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm</Transaction>
+    <Transaction>2018/08/30 20:35:20.000.133,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmDataBase.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmUntProjeto_Banco.dfm</Transaction>
+    <Transaction>2018/08/30 20:35:20.000.133,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmDataBase.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmUntProjeto_Banco.pas</Transaction>
+    <Transaction>2018/08/30 20:35:43.000.572,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.DataBase.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmDataBase.dfm</Transaction>
+    <Transaction>2018/08/30 20:35:43.000.572,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.DataBase.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmDataBase.pas</Transaction>
+    <Transaction>2018/08/30 21:58:14.000.333,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/08/30 21:59:22.000.410,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.Cadastro.Localizacao.dfm</Transaction>
+    <Transaction>2018/08/30 21:59:22.000.410,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.Cadastro.Localizacao.pas</Transaction>
+    <Transaction>2018/08/30 23:52:14.000.192,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/08/30 23:53:13.000.220,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Pais.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm</Transaction>
+    <Transaction>2018/08/30 23:53:13.000.220,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Pais.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/08/31 00:17:51.000.474,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/08/31 00:19:37.000.285,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Estado.dfm</Transaction>
+    <Transaction>2018/08/31 00:19:37.000.285,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Estado.pas</Transaction>
+    <Transaction>2018/08/31 01:21:05.000.655,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/08/31 01:21:56.000.402,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Cidade.dfm</Transaction>
+    <Transaction>2018/08/31 01:21:56.000.402,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Cidade.pas</Transaction>
+    <Transaction>2018/09/06 19:46:05.000.239,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/09/06 19:46:36.000.312,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmCadastroGeral.pas</Transaction>
+    <Transaction>2018/09/06 19:46:36.000.312,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmCadastroGeral.dfm</Transaction>
+    <Transaction>2018/09/06 19:46:55.000.979,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmCadastroGeral.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.Cadastro.Geral.pas</Transaction>
+    <Transaction>2018/09/06 19:46:55.000.979,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\DmCadastroGeral.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.Cadastro.Geral.dfm</Transaction>
+    <Transaction>2018/09/06 19:59:16.000.182,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/09/06 19:59:51.000.473,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Produto.pas</Transaction>
+    <Transaction>2018/09/06 19:59:51.000.474,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Produto.dfm</Transaction>
+    <Transaction>2018/09/06 21:16:11.000.879,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/09/06 21:18:10.000.832,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Cliente.dfm</Transaction>
+    <Transaction>2018/09/06 21:18:10.000.832,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Cliente.pas</Transaction>
+    <Transaction>2018/09/08 11:26:56.000.451,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/09/08 11:27:52.000.176,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.Movimentacao.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/09/08 11:27:52.000.176,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Dm.Movimentacao.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm</Transaction>
+    <Transaction>2018/09/08 13:06:07.000.956,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/09/08 13:09:42.000.161,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Venda.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.pas</Transaction>
+    <Transaction>2018/09/08 13:09:42.000.161,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Frm.Venda.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_06\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

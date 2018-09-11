@@ -1,0 +1,67 @@
+object DmCadastroGeral: TDmCadastroGeral
+  OldCreateOrder = False
+  Height = 293
+  Width = 222
+  object SdsProduto: TSQLDataSet
+    CommandText = 'select PRO_CODIGO, PRO_DESCRICAO, PRO_PRECO from PRODUTO'
+    MaxBlobSize = -1
+    Params = <>
+    SQLConnection = DmDataBase.Conexao
+    Left = 40
+    Top = 24
+    object SdsProdutoPRO_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO PRODUTO'
+      FieldName = 'PRO_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object SdsProdutoPRO_DESCRICAO: TStringField
+      DisplayLabel = 'DESCRICAO'
+      FieldName = 'PRO_DESCRICAO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object SdsProdutoPRO_PRECO: TFMTBCDField
+      DisplayLabel = 'PRECO'
+      FieldName = 'PRO_PRECO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Precision = 18
+      Size = 2
+    end
+  end
+  object DpsProduto: TDataSetProvider
+    DataSet = SdsProduto
+    Options = [poAllowCommandText, poUseQuoteChar]
+    UpdateMode = upWhereKeyOnly
+    Left = 40
+    Top = 88
+  end
+  object CdsProduto: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'DpsProduto'
+    AfterPost = CdsProdutoAfterPost
+    AfterDelete = CdsProdutoAfterDelete
+    Left = 40
+    Top = 152
+    object CdsProdutoPRO_CODIGO: TIntegerField
+      FieldName = 'PRO_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object CdsProdutoPRO_DESCRICAO: TStringField
+      FieldName = 'PRO_DESCRICAO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object CdsProdutoPRO_PRECO: TFMTBCDField
+      FieldName = 'PRO_PRECO'
+      Required = True
+      Precision = 18
+      Size = 2
+    end
+  end
+end
