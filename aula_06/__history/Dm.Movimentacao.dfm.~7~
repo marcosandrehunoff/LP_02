@@ -42,6 +42,7 @@ object DmMovimentacao: TDmMovimentacao
     Top = 96
   end
   object CdsVenda: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DspVenda'
