@@ -87,6 +87,11 @@ object FrmVenda: TFrmVenda
         end
         item
           Expanded = False
+          FieldName = 'VEN_OBS'
+          Visible = True
+        end
+        item
+          Expanded = False
           FieldName = 'CLI_NOME'
           Visible = True
         end>

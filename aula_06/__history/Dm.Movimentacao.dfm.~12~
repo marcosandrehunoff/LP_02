@@ -65,30 +65,17 @@ object DmMovimentacao: TDmMovimentacao
       ProviderFlags = [pfInUpdate]
       Required = True
     end
-    object CdsVendaSdsItem: TDataSetField
-      FieldName = 'SdsItem'
-    end
-    object CdsVendaCLI_NOME: TStringField
-      FieldKind = fkLookup
-      FieldName = 'CLI_NOME'
-      LookupDataSet = DmCadastroGeral.CdsCliente
-      LookupKeyFields = 'CLI_CODIGO'
-      LookupResultField = 'CLI_NOME'
-      KeyFields = 'VEN_CLI_CODIGO'
-      Size = 50
-      Lookup = True
-    end
   end
   object DsMestre: TDataSource
     DataSet = SdsVenda
-    Left = 128
+    Left = 120
     Top = 96
   end
   object SdsItem: TSQLDataSet
     CommandText = 
-      'SELECT VEI_CODIGO, VEI_QUANTIDADE, VEI_UNITARIO, VEI_TOTAL, VEI_' +
-      'VEN_CODIGO, VEI_PRO_CODIGO FROM VENDA_ITEM WHERE VENDA_ITEM.VEI_' +
-      'VEN_CODIGO = :VEN_CODIGO'
+      'SELECT VEI_CODIGO, VEI_QUANTIDADE, VEI_UNITARIO, '#13#10'VEI_TOTAL, VE' +
+      'I_VEN_CODIGO, VEI_PRO_CODIGO FROM '#13#10'VENDA_ITEM WHERE VENDA_ITEM.' +
+      'VEI_VEN_CODIGO ='#13#10' :VEN_CODIGO'
     DataSource = DsMestre
     MaxBlobSize = -1
     Params = <
@@ -139,57 +126,33 @@ object DmMovimentacao: TDmMovimentacao
   end
   object CdsItem: TClientDataSet
     Aggregates = <>
-    DataSetField = CdsVendaSdsItem
     Params = <>
-    AfterInsert = CdsItemAfterInsert
-    BeforePost = CdsItemBeforePost
+    ProviderName = 'DspVenda'
     Left = 192
     Top = 168
-    object CdsItemVEI_CODIGO: TIntegerField
-      FieldName = 'VEI_CODIGO'
+    object CdsItemVEN_CODIGO: TIntegerField
+      FieldName = 'VEN_CODIGO'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
       Required = True
     end
-    object CdsItemVEI_QUANTIDADE: TFMTBCDField
-      FieldName = 'VEI_QUANTIDADE'
-      ProviderFlags = [pfInUpdate]
-      Required = True
-      Precision = 18
-      Size = 4
-    end
-    object CdsItemVEI_UNITARIO: TFMTBCDField
-      FieldName = 'VEI_UNITARIO'
-      ProviderFlags = [pfInUpdate]
-      Required = True
-      Precision = 18
-      Size = 2
-    end
-    object CdsItemVEI_TOTAL: TFMTBCDField
-      FieldName = 'VEI_TOTAL'
-      ProviderFlags = [pfInUpdate]
-      Required = True
-      Precision = 18
-      Size = 2
-    end
-    object CdsItemVEI_VEN_CODIGO: TIntegerField
-      FieldName = 'VEI_VEN_CODIGO'
+    object CdsItemVEN_DATA: TDateField
+      FieldName = 'VEN_DATA'
       ProviderFlags = [pfInUpdate]
       Required = True
     end
-    object CdsItemVEI_PRO_CODIGO: TIntegerField
-      FieldName = 'VEI_PRO_CODIGO'
+    object CdsItemVEN_OBS: TStringField
+      FieldName = 'VEN_OBS'
+      ProviderFlags = [pfInUpdate]
+      Size = 500
+    end
+    object CdsItemVEN_CLI_CODIGO: TIntegerField
+      FieldName = 'VEN_CLI_CODIGO'
       ProviderFlags = [pfInUpdate]
       Required = True
     end
-    object CdsItemPRO_DESCRICAO: TStringField
-      FieldKind = fkLookup
-      FieldName = 'PRO_DESCRICAO'
-      LookupDataSet = DmCadastroGeral.CdsProduto
-      LookupKeyFields = 'PRO_CODIGO'
-      LookupResultField = 'PRO_DESCRICAO'
-      KeyFields = 'VEI_PRO_CODIGO'
-      Size = 50
-      Lookup = True
+    object CdsItemSdsItem: TDataSetField
+      FieldName = 'SdsItem'
+      ProviderFlags = [pfInUpdate]
     end
   end
 end

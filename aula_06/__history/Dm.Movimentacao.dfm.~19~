@@ -68,20 +68,10 @@ object DmMovimentacao: TDmMovimentacao
     object CdsVendaSdsItem: TDataSetField
       FieldName = 'SdsItem'
     end
-    object CdsVendaCLI_NOME: TStringField
-      FieldKind = fkLookup
-      FieldName = 'CLI_NOME'
-      LookupDataSet = DmCadastroGeral.CdsCliente
-      LookupKeyFields = 'CLI_CODIGO'
-      LookupResultField = 'CLI_NOME'
-      KeyFields = 'VEN_CLI_CODIGO'
-      Size = 50
-      Lookup = True
-    end
   end
   object DsMestre: TDataSource
     DataSet = SdsVenda
-    Left = 128
+    Left = 120
     Top = 96
   end
   object SdsItem: TSQLDataSet

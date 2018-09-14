@@ -11,23 +11,30 @@ type
     SdsVenda: TSQLDataSet;
     DspVenda: TDataSetProvider;
     CdsVenda: TClientDataSet;
-    DsMestre: TDataSource;
-    SdsItem: TSQLDataSet;
-    CdsItem: TClientDataSet;
+    SdsVendaVEN_CLI_CODIGO: TIntegerField;
     SdsVendaVEN_CODIGO: TIntegerField;
     SdsVendaVEN_DATA: TDateField;
     SdsVendaVEN_OBS: TStringField;
-    SdsVendaVEN_CLI_CODIGO: TIntegerField;
     CdsVendaVEN_CODIGO: TIntegerField;
     CdsVendaVEN_DATA: TDateField;
     CdsVendaVEN_OBS: TStringField;
     CdsVendaVEN_CLI_CODIGO: TIntegerField;
+    CdsVendaCLI_NOME: TStringField;
+    DsMestre: TDataSource;
+    SdsItem: TSQLDataSet;
+    CdsItem: TClientDataSet;
+    CdsItemVEN_CODIGO: TIntegerField;
+    CdsItemVEN_DATA: TDateField;
+    CdsItemVEN_OBS: TStringField;
+    CdsItemVEN_CLI_CODIGO: TIntegerField;
+    CdsItemSdsItem: TDataSetField;
     SdsItemVEI_CODIGO: TIntegerField;
     SdsItemVEI_QUANTIDADE: TFMTBCDField;
     SdsItemVEI_UNITARIO: TFMTBCDField;
     SdsItemVEI_TOTAL: TFMTBCDField;
     SdsItemVEI_VEN_CODIGO: TIntegerField;
     SdsItemVEI_PRO_CODIGO: TIntegerField;
+    CdsItemPRO_NOME: TStringField;
     CdsVendaSdsItem: TDataSetField;
     CdsItemVEI_CODIGO: TIntegerField;
     CdsItemVEI_QUANTIDADE: TFMTBCDField;
@@ -35,13 +42,9 @@ type
     CdsItemVEI_TOTAL: TFMTBCDField;
     CdsItemVEI_VEN_CODIGO: TIntegerField;
     CdsItemVEI_PRO_CODIGO: TIntegerField;
-    CdsItemPRO_DESCRICAO: TStringField;
-    CdsVendaCLI_NOME: TStringField;
     procedure CdsVendaAfterPost(DataSet: TDataSet);
     procedure CdsVendaAfterDelete(DataSet: TDataSet);
     procedure CdsItemAfterInsert(DataSet: TDataSet);
-    procedure CdsItemBeforePost(DataSet: TDataSet);
-
   private
     { Private declarations }
   public
@@ -57,16 +60,9 @@ implementation
 
 {$R *.dfm}
 
-
-
 procedure TDmMovimentacao.CdsItemAfterInsert(DataSet: TDataSet);
 begin
   CdsItemVEI_VEN_CODIGO.AsInteger := CdsVendaVEN_CODIGO.AsInteger;
-end;
-
-procedure TDmMovimentacao.CdsItemBeforePost(DataSet: TDataSet);
-begin
-  CdsItemVEI_TOTAL.AsFloat := CdsItemVEI_QUANTIDADE.AsFloat * CdsItemVEI_UNITARIO.AsFloat;
 end;
 
 procedure TDmMovimentacao.CdsVendaAfterDelete(DataSet: TDataSet);

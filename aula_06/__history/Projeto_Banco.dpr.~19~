@@ -23,6 +23,8 @@ begin
   Application.CreateForm(TDmDataBase, DmDataBase);
   Application.CreateForm(TDmCadastroLocalizacao, DmCadastroLocalizacao);
   Application.CreateForm(TDmCadastroGeral, DmCadastroGeral);
+  Application.CreateForm(TFrmCliente, FrmCliente);
   Application.CreateForm(TDmMovimentacao, DmMovimentacao);
+  Application.CreateForm(TFrmVenda, FrmVenda);
   Application.Run;
 end.

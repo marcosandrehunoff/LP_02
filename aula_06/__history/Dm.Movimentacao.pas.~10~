@@ -28,19 +28,13 @@ type
     SdsItemVEI_TOTAL: TFMTBCDField;
     SdsItemVEI_VEN_CODIGO: TIntegerField;
     SdsItemVEI_PRO_CODIGO: TIntegerField;
-    CdsVendaSdsItem: TDataSetField;
-    CdsItemVEI_CODIGO: TIntegerField;
-    CdsItemVEI_QUANTIDADE: TFMTBCDField;
-    CdsItemVEI_UNITARIO: TFMTBCDField;
-    CdsItemVEI_TOTAL: TFMTBCDField;
-    CdsItemVEI_VEN_CODIGO: TIntegerField;
-    CdsItemVEI_PRO_CODIGO: TIntegerField;
-    CdsItemPRO_DESCRICAO: TStringField;
-    CdsVendaCLI_NOME: TStringField;
+    CdsItemVEN_CODIGO: TIntegerField;
+    CdsItemVEN_DATA: TDateField;
+    CdsItemVEN_OBS: TStringField;
+    CdsItemVEN_CLI_CODIGO: TIntegerField;
+    CdsItemSdsItem: TDataSetField;
     procedure CdsVendaAfterPost(DataSet: TDataSet);
     procedure CdsVendaAfterDelete(DataSet: TDataSet);
-    procedure CdsItemAfterInsert(DataSet: TDataSet);
-    procedure CdsItemBeforePost(DataSet: TDataSet);
 
   private
     { Private declarations }
@@ -58,16 +52,6 @@ implementation
 {$R *.dfm}
 
 
-
-procedure TDmMovimentacao.CdsItemAfterInsert(DataSet: TDataSet);
-begin
-  CdsItemVEI_VEN_CODIGO.AsInteger := CdsVendaVEN_CODIGO.AsInteger;
-end;
-
-procedure TDmMovimentacao.CdsItemBeforePost(DataSet: TDataSet);
-begin
-  CdsItemVEI_TOTAL.AsFloat := CdsItemVEI_QUANTIDADE.AsFloat * CdsItemVEI_UNITARIO.AsFloat;
-end;
 
 procedure TDmMovimentacao.CdsVendaAfterDelete(DataSet: TDataSet);
 begin

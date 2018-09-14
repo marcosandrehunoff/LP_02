@@ -36,7 +36,6 @@ type
     CdsItemVEI_VEN_CODIGO: TIntegerField;
     CdsItemVEI_PRO_CODIGO: TIntegerField;
     CdsItemPRO_DESCRICAO: TStringField;
-    CdsVendaCLI_NOME: TStringField;
     procedure CdsVendaAfterPost(DataSet: TDataSet);
     procedure CdsVendaAfterDelete(DataSet: TDataSet);
     procedure CdsItemAfterInsert(DataSet: TDataSet);

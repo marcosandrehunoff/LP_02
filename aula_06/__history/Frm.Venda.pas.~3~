@@ -33,10 +33,6 @@ type
     DBEdit6: TDBEdit;
     Label7: TLabel;
     Label8: TLabel;
-    DsItem: TDataSource;
-    DsVenda: TDataSource;
-    DsCliente: TDataSource;
-    DsProduto: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private

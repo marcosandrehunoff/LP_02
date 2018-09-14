@@ -23,6 +23,7 @@ object DmDataBase: TDmDataBase
       'WaitOnLocks=True'
       'IsolationLevel=ReadCommitted'
       'Trim Char=False')
+    Connected = True
     Left = 128
     Top = 120
   end

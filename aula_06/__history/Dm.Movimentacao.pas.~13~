@@ -36,11 +36,9 @@ type
     CdsItemVEI_VEN_CODIGO: TIntegerField;
     CdsItemVEI_PRO_CODIGO: TIntegerField;
     CdsItemPRO_DESCRICAO: TStringField;
-    CdsVendaCLI_NOME: TStringField;
     procedure CdsVendaAfterPost(DataSet: TDataSet);
     procedure CdsVendaAfterDelete(DataSet: TDataSet);
     procedure CdsItemAfterInsert(DataSet: TDataSet);
-    procedure CdsItemBeforePost(DataSet: TDataSet);
 
   private
     { Private declarations }
@@ -62,11 +60,6 @@ implementation
 procedure TDmMovimentacao.CdsItemAfterInsert(DataSet: TDataSet);
 begin
   CdsItemVEI_VEN_CODIGO.AsInteger := CdsVendaVEN_CODIGO.AsInteger;
-end;
-
-procedure TDmMovimentacao.CdsItemBeforePost(DataSet: TDataSet);
-begin
-  CdsItemVEI_TOTAL.AsFloat := CdsItemVEI_QUANTIDADE.AsFloat * CdsItemVEI_UNITARIO.AsFloat;
 end;
 
 procedure TDmMovimentacao.CdsVendaAfterDelete(DataSet: TDataSet);

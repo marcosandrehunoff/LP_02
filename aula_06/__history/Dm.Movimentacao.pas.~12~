@@ -11,16 +11,33 @@ type
     SdsVenda: TSQLDataSet;
     DspVenda: TDataSetProvider;
     CdsVenda: TClientDataSet;
-    SdsVendaVEN_CLI_CODIGO: TIntegerField;
+    DsMestre: TDataSource;
+    SdsItem: TSQLDataSet;
+    CdsItem: TClientDataSet;
     SdsVendaVEN_CODIGO: TIntegerField;
     SdsVendaVEN_DATA: TDateField;
     SdsVendaVEN_OBS: TStringField;
+    SdsVendaVEN_CLI_CODIGO: TIntegerField;
     CdsVendaVEN_CODIGO: TIntegerField;
     CdsVendaVEN_DATA: TDateField;
     CdsVendaVEN_OBS: TStringField;
     CdsVendaVEN_CLI_CODIGO: TIntegerField;
+    SdsItemVEI_CODIGO: TIntegerField;
+    SdsItemVEI_QUANTIDADE: TFMTBCDField;
+    SdsItemVEI_UNITARIO: TFMTBCDField;
+    SdsItemVEI_TOTAL: TFMTBCDField;
+    SdsItemVEI_VEN_CODIGO: TIntegerField;
+    SdsItemVEI_PRO_CODIGO: TIntegerField;
+    CdsVendaSdsItem: TDataSetField;
+    CdsItemVEI_CODIGO: TIntegerField;
+    CdsItemVEI_QUANTIDADE: TFMTBCDField;
+    CdsItemVEI_UNITARIO: TFMTBCDField;
+    CdsItemVEI_TOTAL: TFMTBCDField;
+    CdsItemVEI_VEN_CODIGO: TIntegerField;
+    CdsItemVEI_PRO_CODIGO: TIntegerField;
     procedure CdsVendaAfterPost(DataSet: TDataSet);
     procedure CdsVendaAfterDelete(DataSet: TDataSet);
+
   private
     { Private declarations }
   public
@@ -35,6 +52,8 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+
 
 procedure TDmMovimentacao.CdsVendaAfterDelete(DataSet: TDataSet);
 begin

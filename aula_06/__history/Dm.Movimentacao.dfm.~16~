@@ -38,6 +38,7 @@ object DmMovimentacao: TDmMovimentacao
     Top = 96
   end
   object CdsVenda: TClientDataSet
+    Active = True
     Aggregates = <>
     Params = <>
     ProviderName = 'DspVenda'
@@ -68,20 +69,10 @@ object DmMovimentacao: TDmMovimentacao
     object CdsVendaSdsItem: TDataSetField
       FieldName = 'SdsItem'
     end
-    object CdsVendaCLI_NOME: TStringField
-      FieldKind = fkLookup
-      FieldName = 'CLI_NOME'
-      LookupDataSet = DmCadastroGeral.CdsCliente
-      LookupKeyFields = 'CLI_CODIGO'
-      LookupResultField = 'CLI_NOME'
-      KeyFields = 'VEN_CLI_CODIGO'
-      Size = 50
-      Lookup = True
-    end
   end
   object DsMestre: TDataSource
     DataSet = SdsVenda
-    Left = 128
+    Left = 120
     Top = 96
   end
   object SdsItem: TSQLDataSet
@@ -141,8 +132,6 @@ object DmMovimentacao: TDmMovimentacao
     Aggregates = <>
     DataSetField = CdsVendaSdsItem
     Params = <>
-    AfterInsert = CdsItemAfterInsert
-    BeforePost = CdsItemBeforePost
     Left = 192
     Top = 168
     object CdsItemVEI_CODIGO: TIntegerField
@@ -180,16 +169,6 @@ object DmMovimentacao: TDmMovimentacao
       FieldName = 'VEI_PRO_CODIGO'
       ProviderFlags = [pfInUpdate]
       Required = True
-    end
-    object CdsItemPRO_DESCRICAO: TStringField
-      FieldKind = fkLookup
-      FieldName = 'PRO_DESCRICAO'
-      LookupDataSet = DmCadastroGeral.CdsProduto
-      LookupKeyFields = 'PRO_CODIGO'
-      LookupResultField = 'PRO_DESCRICAO'
-      KeyFields = 'VEI_PRO_CODIGO'
-      Size = 50
-      Lookup = True
     end
   end
 end
