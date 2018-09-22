@@ -1,0 +1,61 @@
+object DmConexao: TDmConexao
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 352
+  Width = 481
+  object FDConexao: TFDConnection
+    Params.Strings = (
+      
+        'Database=E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\BD' +
+        '\DADOSFIRADAC.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 16
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 32
+    Top = 80
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 32
+    Top = 144
+  end
+  object QryProprietario: TFDQuery
+    Connection = FDConexao
+    SQL.Strings = (
+      'SELECT PROPRIETARIO.PRP_CODIGO,'
+      'PROPRIETARIO.PRP_NOME,'
+      'PROPRIETARIO.PRP_ENDERECO'
+      'FROM PROPRIETARIO')
+    Left = 32
+    Top = 208
+    object QryProprietarioPRP_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'PRP_CODIGO'
+      Origin = 'PRP_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryProprietarioPRP_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'PRP_NOME'
+      Origin = 'PRP_NOME'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object QryProprietarioPRP_ENDERECO: TStringField
+      DisplayLabel = 'ENDERECO'
+      FieldName = 'PRP_ENDERECO'
+      Origin = 'PRP_ENDERECO'
+      ProviderFlags = [pfInUpdate]
+      Size = 100
+    end
+  end
+end

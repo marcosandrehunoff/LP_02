@@ -1,0 +1,28 @@
+unit Frm.VeiculoMultas;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Conexao, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.DBCtrls;
+
+type
+  TFrmVeiculoMultas = class(TForm)
+    Panel1: TPanel;
+    DBNavigator1: TDBNavigator;
+    DBRadioGroup1: TDBRadioGroup;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmVeiculoMultas: TFrmVeiculoMultas;
+
+implementation
+
+{$R *.dfm}
+
+end.

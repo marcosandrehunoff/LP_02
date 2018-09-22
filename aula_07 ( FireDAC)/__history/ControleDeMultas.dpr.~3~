@@ -1,0 +1,18 @@
+program ControleDeMultas;
+
+uses
+  Vcl.Forms,
+  Frm.Principal in 'Frm.Principal.pas' {FrmPrincipal},
+  Dm.Conexao in 'Dm.Conexao.pas' {DmConexao: TDataModule},
+  Frm.Proprietario in 'Frm.Proprietario.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.CreateForm(TDmConexao, DmConexao);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

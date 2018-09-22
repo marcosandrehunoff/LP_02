@@ -1,0 +1,28 @@
+unit Frm.Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Conexao, Vcl.Menus;
+
+type
+  TFrmPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    Proprietario1: TMenuItem;
+    Veiculo1: TMenuItem;
+    Sair1: TMenuItem;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.

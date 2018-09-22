@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/09/20 20:19:49.000.576,=C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/20 20:20:18.000.401,C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\FrmPrincipal.pas</Transaction>
+    <Transaction>2018/09/20 20:20:18.000.401,C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\FrmPrincipal.dfm</Transaction>
+    <Transaction>2018/09/20 20:20:40.000.258,C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\ControleDeMultas.dproj</Transaction>
+    <Transaction>2018/09/20 20:21:31.000.761,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\FrmPrincipal.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Frm.Principal.dfm</Transaction>
+    <Transaction>2018/09/20 20:21:31.000.761,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\FrmPrincipal.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Frm.Principal.pas</Transaction>
+    <Transaction>2018/09/20 20:22:31.000.014,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.pas</Transaction>
+    <Transaction>2018/09/20 20:23:09.000.715,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Dm.Conexao.dfm</Transaction>
+    <Transaction>2018/09/20 20:23:09.000.715,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Dm.Conexao.pas</Transaction>
+    <Transaction>2018/09/20 20:44:22.000.634,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.pas</Transaction>
+    <Transaction>2018/09/20 20:44:36.000.387,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Frm.Proprietario.dfm</Transaction>
+    <Transaction>2018/09/20 20:44:36.000.387,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Frm.Proprietario.pas</Transaction>
+    <Transaction>2018/09/20 21:27:52.000.517,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.pas</Transaction>
+    <Transaction>2018/09/20 21:28:11.000.726,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Frm.VeiculoMultas.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.pas</Transaction>
+    <Transaction>2018/09/20 21:28:11.000.727,E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Frm.VeiculoMultas.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\aula_07 ( FireDAC)\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

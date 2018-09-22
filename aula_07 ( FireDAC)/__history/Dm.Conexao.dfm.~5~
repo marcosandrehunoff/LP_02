@@ -1,0 +1,182 @@
+object DmConexao: TDmConexao
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 293
+  Width = 298
+  object FDConexao: TFDConnection
+    Params.Strings = (
+      
+        'Database=E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\BD' +
+        '\DADOSFIRADAC.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 32
+    Top = 16
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 32
+    Top = 80
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 32
+    Top = 144
+  end
+  object QryProprietario: TFDQuery
+    Connection = FDConexao
+    SQL.Strings = (
+      'SELECT PROPRIETARIO.PRP_CODIGO,'
+      'PROPRIETARIO.PRP_NOME,'
+      'PROPRIETARIO.PRP_ENDERECO'
+      'FROM PROPRIETARIO')
+    Left = 32
+    Top = 208
+    object QryProprietarioPRP_CODIGO: TIntegerField
+      DisplayLabel = 'CODIGO'
+      FieldName = 'PRP_CODIGO'
+      Origin = 'PRP_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryProprietarioPRP_NOME: TStringField
+      DisplayLabel = 'NOME'
+      FieldName = 'PRP_NOME'
+      Origin = 'PRP_NOME'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 60
+    end
+    object QryProprietarioPRP_ENDERECO: TStringField
+      DisplayLabel = 'ENDERECO'
+      FieldName = 'PRP_ENDERECO'
+      Origin = 'PRP_ENDERECO'
+      ProviderFlags = [pfInUpdate]
+      Size = 100
+    end
+  end
+  object QryVeiculo: TFDQuery
+    Connection = FDConexao
+    SQL.Strings = (
+      'SELECT VEICULO.VEI_CODIGO,'
+      'VEICULO.VEI_PLACA,'
+      'VEICULO.VEI_MARCA,'
+      'VEICULO.VEI_MODELO,'
+      'VEICULO.VEI_ANO,'
+      'VEICULO.PRP_CODIGO'
+      'FROM VEICULO')
+    Left = 216
+    Top = 56
+    object QryVeiculoVEI_CODIGO: TIntegerField
+      FieldName = 'VEI_CODIGO'
+      Origin = 'VEI_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryVeiculoVEI_PLACA: TStringField
+      FieldName = 'VEI_PLACA'
+      Origin = 'VEI_PLACA'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 10
+    end
+    object QryVeiculoVEI_MARCA: TStringField
+      FieldName = 'VEI_MARCA'
+      Origin = 'VEI_MARCA'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 30
+    end
+    object QryVeiculoVEI_MODELO: TStringField
+      FieldName = 'VEI_MODELO'
+      Origin = 'VEI_MODELO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 30
+    end
+    object QryVeiculoVEI_ANO: TIntegerField
+      FieldName = 'VEI_ANO'
+      Origin = 'VEI_ANO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+    object QryVeiculoPRP_CODIGO: TIntegerField
+      FieldName = 'PRP_CODIGO'
+      Origin = 'PRP_CODIGO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
+  end
+  object QryMultas: TFDQuery
+    AfterInsert = QryMultasAfterInsert
+    MasterSource = DsMestreVeiculo
+    MasterFields = 'VEI_CODIGO'
+    Connection = FDConexao
+    SQL.Strings = (
+      'SELECT MULTAS.VEI_CODIGO,'
+      'MULTAS.MLT_ITEM,'
+      'MULTAS.MLT_DATA,'
+      'MULTAS.MLT_HORA,'
+      'MULTAS.MLT_VALOR,'
+      'MULTAS.MLT_LOCAL'
+      'FROM MULTAS'
+      'WHERE'
+      '(MULTAS.VEI_CODIGO = :VEI_CODIGO)')
+    Left = 216
+    Top = 184
+    ParamData = <
+      item
+        Name = 'VEI_CODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object QryMultasVEI_CODIGO: TIntegerField
+      FieldName = 'VEI_CODIGO'
+      Origin = 'VEI_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryMultasMLT_ITEM: TIntegerField
+      FieldName = 'MLT_ITEM'
+      Origin = 'MLT_ITEM'
+      ProviderFlags = [pfInUpdate, pfInKey]
+      Required = True
+    end
+    object QryMultasMLT_DATA: TDateField
+      FieldName = 'MLT_DATA'
+      Origin = 'MLT_DATA'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      EditMask = '!99/99/0000;1;_'
+    end
+    object QryMultasMLT_HORA: TTimeField
+      FieldName = 'MLT_HORA'
+      Origin = 'MLT_HORA'
+      ProviderFlags = [pfInUpdate]
+      EditMask = '!90:00;0;_'
+    end
+    object QryMultasMLT_VALOR: TBCDField
+      FieldName = 'MLT_VALOR'
+      Origin = 'MLT_VALOR'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Precision = 18
+      Size = 2
+    end
+    object QryMultasMLT_LOCAL: TStringField
+      FieldName = 'MLT_LOCAL'
+      Origin = 'MLT_LOCAL'
+      ProviderFlags = [pfInUpdate]
+      Size = 100
+    end
+  end
+  object DsMestreVeiculo: TDataSource
+    DataSet = QryVeiculo
+    Left = 216
+    Top = 128
+  end
+end
