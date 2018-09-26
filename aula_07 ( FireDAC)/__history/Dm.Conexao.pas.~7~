@@ -38,7 +38,6 @@ type
     QryCondutor: TFDQuery;
     QryCondutorCOND_CODIGO: TIntegerField;
     QryCondutorCOND_NOME: TStringField;
-    QryMultasCOND_NOME: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
     procedure QryMultasAfterInsert(DataSet: TDataSet);

@@ -3,7 +3,7 @@ object FrmPrincipal: TFrmPrincipal
   Top = 0
   Caption = 'Controle De Multas'
   ClientHeight = 192
-  ClientWidth = 282
+  ClientWidth = 243
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,7 +23,6 @@ object FrmPrincipal: TFrmPrincipal
     end
     object Condutor1: TMenuItem
       Caption = 'Condutor'
-      OnClick = Condutor1Click
     end
     object Veiculo1: TMenuItem
       Caption = 'Multa Veiculo'

@@ -14,7 +14,7 @@ object DmConexao: TDmConexao
       'DriverID=FB')
     Connected = True
     LoginPrompt = False
-    Left = 32
+    Left = 24
     Top = 16
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
@@ -27,14 +27,15 @@ object DmConexao: TDmConexao
     Top = 144
   end
   object QryProprietario: TFDQuery
+    Active = True
     Connection = FDConexao
     SQL.Strings = (
       'SELECT PROPRIETARIO.PRP_CODIGO,'
       'PROPRIETARIO.PRP_NOME,'
       'PROPRIETARIO.PRP_ENDERECO'
       'FROM PROPRIETARIO')
-    Left = 32
-    Top = 208
+    Left = 96
+    Top = 232
     object QryProprietarioPRP_CODIGO: TIntegerField
       DisplayLabel = 'CODIGO'
       FieldName = 'PRP_CODIGO'
@@ -59,6 +60,7 @@ object DmConexao: TDmConexao
     end
   end
   object QryVeiculo: TFDQuery
+    Active = True
     Connection = FDConexao
     SQL.Strings = (
       'SELECT VEICULO.VEI_CODIGO,'
@@ -68,8 +70,8 @@ object DmConexao: TDmConexao
       'VEICULO.VEI_ANO,'
       'VEICULO.PRP_CODIGO'
       'FROM VEICULO')
-    Left = 216
-    Top = 56
+    Left = 224
+    Top = 16
     object QryVeiculoVEI_CODIGO: TIntegerField
       FieldName = 'VEI_CODIGO'
       Origin = 'VEI_CODIGO'
@@ -81,7 +83,6 @@ object DmConexao: TDmConexao
       Origin = 'VEI_PLACA'
       ProviderFlags = [pfInUpdate]
       Required = True
-      EditMask = '-;0;_'
       Size = 10
     end
     object QryVeiculoVEI_MARCA: TStringField
@@ -112,28 +113,33 @@ object DmConexao: TDmConexao
     end
   end
   object QryMultas: TFDQuery
+    Active = True
     AfterInsert = QryMultasAfterInsert
     MasterSource = DsMestreVeiculo
     MasterFields = 'VEI_CODIGO'
+    DetailFields = 'VEI_CODIGO'
     Connection = FDConexao
+    FetchOptions.AssignedValues = [evCache]
+    FetchOptions.Cache = [fiBlobs, fiMeta]
     SQL.Strings = (
       'SELECT MULTAS.VEI_CODIGO,'
       'MULTAS.MLT_ITEM,'
       'MULTAS.MLT_DATA,'
       'MULTAS.MLT_HORA,'
       'MULTAS.MLT_VALOR,'
-      'MULTAS.MLT_LOCAL'
+      'MULTAS.MLT_LOCAL,'
+      'MULTAS.MLT_COND_CODIGO'
       'FROM MULTAS'
       'WHERE'
       '(MULTAS.VEI_CODIGO = :VEI_CODIGO)')
-    Left = 216
-    Top = 184
+    Left = 224
+    Top = 144
     ParamData = <
       item
         Name = 'VEI_CODIGO'
         DataType = ftInteger
         ParamType = ptInput
-        Value = Null
+        Value = 1
       end>
     object QryMultasVEI_CODIGO: TIntegerField
       FieldName = 'VEI_CODIGO'
@@ -152,13 +158,13 @@ object DmConexao: TDmConexao
       Origin = 'MLT_DATA'
       ProviderFlags = [pfInUpdate]
       Required = True
-      EditMask = '!99/99/0000;0;_'
+      EditMask = '!99/99/0000;1;_'
     end
     object QryMultasMLT_HORA: TTimeField
       FieldName = 'MLT_HORA'
       Origin = 'MLT_HORA'
       ProviderFlags = [pfInUpdate]
-      EditMask = '!90:00;0;_'
+      EditMask = '!90:00;1;_'
     end
     object QryMultasMLT_VALOR: TBCDField
       FieldName = 'MLT_VALOR'
@@ -174,10 +180,39 @@ object DmConexao: TDmConexao
       ProviderFlags = [pfInUpdate]
       Size = 100
     end
+    object QryMultasMLT_COND_CODIGO: TIntegerField
+      FieldName = 'MLT_COND_CODIGO'
+      Origin = 'MLT_COND_CODIGO'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+    end
   end
   object DsMestreVeiculo: TDataSource
     DataSet = QryVeiculo
-    Left = 216
-    Top = 128
+    Left = 224
+    Top = 88
+  end
+  object QryCondutor: TFDQuery
+    Active = True
+    Connection = FDConexao
+    SQL.Strings = (
+      'SELECT condutor.cond_codigo,'
+      'condutor.cond_nome'
+      'FROM condutor')
+    Left = 176
+    Top = 232
+    object QryCondutorCOND_CODIGO: TIntegerField
+      FieldName = 'COND_CODIGO'
+      Origin = 'COND_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QryCondutorCOND_NOME: TStringField
+      FieldName = 'COND_NOME'
+      Origin = 'COND_NOME'
+      ProviderFlags = [pfInUpdate]
+      Required = True
+      Size = 50
+    end
   end
 end
