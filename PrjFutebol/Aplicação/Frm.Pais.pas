@@ -1,24 +1,24 @@
-unit Frm.Condutor;
+unit Frm.Pais;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Conexao, Data.DB, Vcl.StdCtrls,
-  Vcl.Mask, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Conexao, Dm.Dados, Data.DB,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.ExtCtrls;
 
 type
-  TFrmCondutor = class(TForm)
+  TFrmPais = class(TForm)
     Panel1: TPanel;
     DBNavigator1: TDBNavigator;
     Panel2: TPanel;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     Label1: TLabel;
     Label2: TLabel;
-    DsCondutor: TDataSource;
+    DsPais: TDataSource;
+    DBGrid1: TDBGrid;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -28,20 +28,20 @@ type
   end;
 
 var
-  FrmCondutor: TFrmCondutor;
+  FrmPais: TFrmPais;
 
 implementation
 
 {$R *.dfm}
 
-procedure TFrmCondutor.FormCreate(Sender: TObject);
+procedure TFrmPais.FormCreate(Sender: TObject);
 begin
-DmConexao.QryCondutor.Open;
+  DmDados.QryPais.open;
 end;
 
-procedure TFrmCondutor.FormDestroy(Sender: TObject);
+procedure TFrmPais.FormDestroy(Sender: TObject);
 begin
-DmConexao.QryCondutor.Close;
+ DmDados.QryPais.Close;
 end;
 
 end.

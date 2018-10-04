@@ -11,8 +11,6 @@ object FrmCondutor: TFrmCondutor
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
-  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -30,6 +28,7 @@ object FrmCondutor: TFrmCondutor
       DataSource = DsCondutor
       Align = alClient
       TabOrder = 0
+      ExplicitHeight = 56
     end
   end
   object Panel2: TPanel
@@ -39,6 +38,7 @@ object FrmCondutor: TFrmCondutor
     Height = 104
     Align = alTop
     TabOrder = 1
+    ExplicitTop = 62
     object Label1: TLabel
       Left = 16
       Top = 38
@@ -103,6 +103,8 @@ object FrmCondutor: TFrmCondutor
     Height = 144
     Align = alTop
     TabOrder = 2
+    ExplicitLeft = 1
+    ExplicitTop = 167
     object DBGrid1: TDBGrid
       Left = 1
       Top = 1

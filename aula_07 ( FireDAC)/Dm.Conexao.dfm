@@ -27,7 +27,6 @@ object DmConexao: TDmConexao
     Top = 144
   end
   object QryProprietario: TFDQuery
-    Active = True
     Connection = FDConexao
     SQL.Strings = (
       'SELECT PROPRIETARIO.PRP_CODIGO,'
@@ -60,7 +59,6 @@ object DmConexao: TDmConexao
     end
   end
   object QryVeiculo: TFDQuery
-    Active = True
     Connection = FDConexao
     SQL.Strings = (
       'SELECT VEICULO.VEI_CODIGO,'
@@ -216,7 +214,6 @@ object DmConexao: TDmConexao
     Top = 88
   end
   object QryCondutor: TFDQuery
-    Active = True
     Connection = FDConexao
     SQL.Strings = (
       'SELECT condutor.cond_codigo,'

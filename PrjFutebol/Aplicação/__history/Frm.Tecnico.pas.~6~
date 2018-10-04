@@ -1,24 +1,25 @@
-unit Frm.Condutor;
+unit Frm.Tecnico;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Conexao, Data.DB, Vcl.StdCtrls,
-  Vcl.Mask, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Dados, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TFrmCondutor = class(TForm)
+  TFrmTecnico = class(TForm)
     Panel1: TPanel;
-    DBNavigator1: TDBNavigator;
     Panel2: TPanel;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    DsTecnico: TDataSource;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     Label1: TLabel;
     Label2: TLabel;
-    DsCondutor: TDataSource;
+    Label3: TLabel;
+    DBGrid1: TDBGrid;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -28,20 +29,20 @@ type
   end;
 
 var
-  FrmCondutor: TFrmCondutor;
+  FrmTecnico: TFrmTecnico;
 
 implementation
 
 {$R *.dfm}
 
-procedure TFrmCondutor.FormCreate(Sender: TObject);
+procedure TFrmTecnico.FormCreate(Sender: TObject);
 begin
-DmConexao.QryCondutor.Open;
+  DmDados.QryTecnico.Open;
 end;
 
-procedure TFrmCondutor.FormDestroy(Sender: TObject);
+procedure TFrmTecnico.FormDestroy(Sender: TObject);
 begin
-DmConexao.QryCondutor.Close;
+  DmDados.QryTecnico.Close;
 end;
 
 end.

@@ -1,0 +1,20 @@
+program PrjFutebolFireDac;
+
+uses
+  Vcl.Forms,
+  Frm.Futebol in 'Frm.Futebol.pas' {FrmFutebol},
+  Dm.Conexao in 'Dm.Conexao.pas' {DmConexao: TDataModule},
+  Dm.Dados in 'Dm.Dados.pas' {DmDados: TDataModule},
+  Frm.Pais in 'Frm.Pais.pas' {FrmPais};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmFutebol, FrmFutebol);
+  Application.CreateForm(TDmConexao, DmConexao);
+  Application.CreateForm(TDmDados, DmDados);
+  Application.CreateForm(TFrmPais, FrmPais);
+  Application.Run;
+end.

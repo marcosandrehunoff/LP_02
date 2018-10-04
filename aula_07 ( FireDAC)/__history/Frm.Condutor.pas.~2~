@@ -19,8 +19,6 @@ type
     Label1: TLabel;
     Label2: TLabel;
     DsCondutor: TDataSource;
-    procedure FormCreate(Sender: TObject);
-    procedure FormDestroy(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,15 +31,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TFrmCondutor.FormCreate(Sender: TObject);
-begin
-DmConexao.QryCondutor.Open;
-end;
-
-procedure TFrmCondutor.FormDestroy(Sender: TObject);
-begin
-DmConexao.QryCondutor.Close;
-end;
 
 end.

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/09/27 19:55:58.000.522,=C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 19:56:47.000.038,C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Futebol.dfm</Transaction>
+    <Transaction>2018/09/27 19:56:47.000.038,C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Futebol.pas</Transaction>
+    <Transaction>2018/09/27 19:57:14.000.392,C:\Users\Marcos\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\PrjFutebolFireDac.dproj</Transaction>
+    <Transaction>2018/09/27 19:57:54.000.510,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 19:58:06.000.161,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Dm.Conexao.dfm</Transaction>
+    <Transaction>2018/09/27 19:58:06.000.161,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Dm.Conexao.pas</Transaction>
+    <Transaction>2018/09/27 20:00:10.000.601,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 20:00:38.000.586,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Dm.Dados.dfm</Transaction>
+    <Transaction>2018/09/27 20:00:38.000.586,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Dm.Dados.pas</Transaction>
+    <Transaction>2018/09/27 20:26:15.000.126,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 20:26:24.000.907,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Pais.pas</Transaction>
+    <Transaction>2018/09/27 20:26:24.000.907,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Pais.dfm</Transaction>
+    <Transaction>2018/09/27 20:36:05.000.276,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 20:36:21.000.166,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Tatica.dfm</Transaction>
+    <Transaction>2018/09/27 20:36:21.000.166,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Tatica.pas</Transaction>
+    <Transaction>2018/09/27 20:47:22.000.799,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 20:48:42.000.392,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Tecnico.dfm</Transaction>
+    <Transaction>2018/09/27 20:48:42.000.392,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Tecnico.pas</Transaction>
+    <Transaction>2018/09/27 21:30:12.000.355,=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas</Transaction>
+    <Transaction>2018/09/27 21:31:45.000.526,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.dfm=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Clube.dfm</Transaction>
+    <Transaction>2018/09/27 21:31:45.000.526,E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Unit1.pas=E:\Quarto Semestre\Linguagem de Programação II\LP_02\PrjFutebol\Aplicação\Frm.Clube.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Dm.Conexao.pas"/>
+    <File Path="Dm.Conexao.dfm"/>
+    <File Path="Dm.Dados.pas"/>
+    <File Path="Dm.Dados.dfm"/>
+    <File Path="Frm.Futebol.pas"/>
+    <File Path="Frm.Futebol.dfm"/>
+    <File Path="Frm.Pais.pas"/>
+    <File Path="Frm.Pais.dfm"/>
+    <File Path="Frm.Tatica.Pas"/>
+    <File Path="Frm.Tatica.dfm"/>
+    <File Path="Frm.Tecnico.pas"/>
+    <File Path="Frm.Tecnico.dfm"/>
+    <File Path="Frm.Clube.pas"/>
+    <File Path="Frm.Clube.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

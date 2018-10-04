@@ -1,0 +1,29 @@
+object DmDados: TDmDados
+  OldCreateOrder = False
+  Height = 403
+  Width = 259
+  object DsMestreDetalhe: TDataSource
+    Left = 40
+    Top = 49
+  end
+  object QryPais: TFDQuery
+    Left = 200
+    Top = 24
+  end
+  object QryClube: TFDQuery
+    Left = 200
+    Top = 80
+  end
+  object QryTatica: TFDQuery
+    Left = 200
+    Top = 136
+  end
+  object QryJogador: TFDQuery
+    Left = 200
+    Top = 200
+  end
+  object QryTecnico: TFDQuery
+    Left = 200
+    Top = 264
+  end
+end

@@ -1,24 +1,26 @@
-unit Frm.Condutor;
+unit Frm.Tatica;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Conexao, Data.DB, Vcl.StdCtrls,
-  Vcl.Mask, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Dm.Dados, Data.DB, Vcl.Grids,
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls, Vcl.ExtCtrls;
 
 type
-  TFrmCondutor = class(TForm)
+  TFrmTatica = class(TForm)
     Panel1: TPanel;
-    DBNavigator1: TDBNavigator;
     Panel2: TPanel;
     Panel3: TPanel;
-    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
     Label1: TLabel;
     Label2: TLabel;
-    DsCondutor: TDataSource;
+    Label3: TLabel;
+    DBGrid1: TDBGrid;
+    DsTatica: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
   private
@@ -28,20 +30,20 @@ type
   end;
 
 var
-  FrmCondutor: TFrmCondutor;
+  FrmTatica: TFrmTatica;
 
 implementation
 
 {$R *.dfm}
 
-procedure TFrmCondutor.FormCreate(Sender: TObject);
+procedure TFrmTatica.FormCreate(Sender: TObject);
 begin
-DmConexao.QryCondutor.Open;
+ DmDados.QryTatica.Open;
 end;
 
-procedure TFrmCondutor.FormDestroy(Sender: TObject);
+procedure TFrmTatica.FormDestroy(Sender: TObject);
 begin
-DmConexao.QryCondutor.Close;
+ DmDados.QryTatica.Close;
 end;
 
 end.
