@@ -1,0 +1,67 @@
+object DmConexao: TDmConexao
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 325
+  Width = 322
+  object FDConexao: TFDConnection
+    Params.Strings = (
+      
+        'Database=E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\Pr' +
+        'jFutebol\Dados\FUTEBOL.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'MonitorBy=FlatFile'
+      'DriverID=FB')
+    LoginPrompt = False
+    Left = 64
+    Top = 24
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 64
+    Top = 88
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 64
+    Top = 152
+  end
+  object FDMoniFlatFileClientLink1: TFDMoniFlatFileClientLink
+    FileName = 
+      'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\aula_07 ( F' +
+      'ireDAC)\Logs\log.txt'
+    FileAppend = True
+    FileColumns = [tiRefNo, tiTime, tiThreadID, tiClassName, tiObjID, tiMsgText]
+    ShowTraces = False
+    Tracing = True
+    Left = 64
+    Top = 232
+  end
+  object FDFBNBackup: TFDFBNBackup
+    DriverLink = FDPhysFBDriverLink1
+    UserName = 'sysdba'
+    Password = 'masterkey'
+    Database = 
+      'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
+      'Aplicacao\futebol.fdb'
+    BackupFile = 
+      'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
+      'Aplicacao\FUTEBOL.fbk'
+    Left = 232
+    Top = 96
+  end
+  object FDFBNRestore: TFDFBNRestore
+    DriverLink = FDPhysFBDriverLink1
+    UserName = 'sysdba'
+    Password = 'masterkey'
+    Database = 
+      'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
+      'Aplicacao\FUTEBOL.fdb'
+    BackupFiles.Strings = (
+      
+        'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
+        'Aplicacao\FUTEBOL.fbk')
+    Left = 232
+    Top = 168
+  end
+end

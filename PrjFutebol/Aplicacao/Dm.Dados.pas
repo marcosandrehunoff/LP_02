@@ -1,0 +1,216 @@
+unit Dm.Dados;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Dm.Conexao, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TDmDados = class(TDataModule)
+    DsMestreDetalhe: TDataSource;
+    QryPais: TFDQuery;
+    QryClube: TFDQuery;
+    QryTatica: TFDQuery;
+    QryJogador: TFDQuery;
+    QryTecnico: TFDQuery;
+    QryPaisPAI_CODIGO: TIntegerField;
+    QryPaisPAI_NOME: TStringField;
+    QryTaticaTAT_CODIGO: TIntegerField;
+    QryTaticaTAT_DESCRICAO: TStringField;
+    QryTaticaTAT_ESQUEMA: TStringField;
+    QryJogadorJOG_NUMERO: TIntegerField;
+    QryJogadorPAI_CODIGO: TIntegerField;
+    QryJogadorCLB_CODIGO: TIntegerField;
+    QryJogadorJOG_NOME: TStringField;
+    QryJogadorJOG_POSICAO: TStringField;
+    QryJogadorJOG_IDADE: TIntegerField;
+    QryJogadorJOG_LADO: TStringField;
+    QryJogadorJOG_TITULAR: TStringField;
+    QryJogadorJOG_CARACTERISTICA: TStringField;
+    QryTecnicoTEC_CODIGO: TIntegerField;
+    QryTecnicoPAI_CODIGO: TIntegerField;
+    QryTecnicoTEC_NOME: TStringField;
+    QryClubeCLB_CODIGO: TIntegerField;
+    QryClubeTAT_CODIGO: TIntegerField;
+    QryClubeTEC_CODIGO: TIntegerField;
+    QryClubePAI_CODIGO: TIntegerField;
+    QryClubeCLB_NOME: TStringField;
+    QryClubeCLB_ESTADIO: TStringField;
+    QryClubeCLB_DTFUNDACAO: TDateField;
+    procedure QryPaisAfterInsert(DataSet: TDataSet);
+    procedure QryClubeAfterInsert(DataSet: TDataSet);
+    procedure QryTaticaAfterInsert(DataSet: TDataSet);
+    procedure QryTecnicoAfterInsert(DataSet: TDataSet);
+    procedure QryPaisUpdateError(ASender: TDataSet; AException: EFDException;
+      ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+      var AAction: TFDErrorAction);
+    procedure QryTaticaUpdateError(ASender: TDataSet; AException: EFDException;
+      ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+      var AAction: TFDErrorAction);
+    procedure QryClubeUpdateError(ASender: TDataSet; AException: EFDException;
+      ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+      var AAction: TFDErrorAction);
+    procedure QryJogadorUpdateError(ASender: TDataSet; AException: EFDException;
+      ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+      var AAction: TFDErrorAction);
+    procedure QryTecnicoUpdateError(ASender: TDataSet; AException: EFDException;
+      ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+      var AAction: TFDErrorAction);
+  private
+    { Private declarations }
+    function GerarCodigo (const  SEQUENCIAL: STRING) : INTEGER;
+  public
+    { Public declarations }
+  end;
+
+var
+  DmDados: TDmDados;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TDmDados }
+
+function TDmDados.GerarCodigo(const SEQUENCIAL: STRING): INTEGER;
+VAR
+  vQuery: TFDQuery;
+begin
+  vQuery := TFDQuery.Create(nil);
+  try
+    vQuery.Connection := DmConexao.FDConexao;
+    vQuery.SQL.Add('SELECT NEXT VALUE FOR ' + SEQUENCIAL +
+      ' FROM RDB$DATABASE');
+    vQuery.Open();
+    Result := vQuery.Fields[0].AsInteger;
+  finally
+    FreeAndNil(vQuery);
+  end;
+end;
+
+procedure TDmDados.QryClubeAfterInsert(DataSet: TDataSet);
+begin
+  //QryClubeCLB_CODIGO.AsInteger := GerarCodigo('seq_clb_codigo')
+end;
+
+procedure TDmDados.QryClubeUpdateError(ASender: TDataSet;
+  AException: EFDException; ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+  var AAction: TFDErrorAction);
+begin
+  if AException is EFDDBEngineException then
+  begin
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekUKViolated) then
+    begin
+      raise Exception.Create('Codigo do clube ja cadastrado!');
+    end;
+
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekFKViolated) then
+    begin
+      raise Exception.Create('Está acão não é possivel pois existem registros dependentes');
+    end;
+  end;
+end;
+
+procedure TDmDados.QryJogadorUpdateError(ASender: TDataSet;
+  AException: EFDException; ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+  var AAction: TFDErrorAction);
+begin
+ if AException is EFDDBEngineException then
+  begin
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekUKViolated) then
+    begin
+      raise Exception.Create('Codigo do jogador ja cadastrado!');
+    end;
+
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekFKViolated) then
+    begin
+      raise Exception.Create('Está acão não é possivel pois existem registros dependentes');
+    end;
+  end;
+end;
+
+procedure TDmDados.QryPaisAfterInsert(DataSet: TDataSet);
+begin
+  // QryPaisPAI_CODIGO.AsInteger := GerarCodigo('SEQ_PAI_CODIGO');
+end;
+
+procedure TDmDados.QryPaisUpdateError(ASender: TDataSet;
+  AException: EFDException; ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+  var AAction: TFDErrorAction);
+begin
+  if AException IS EFDDBEngineException then
+  begin
+    if (EFDDBEngineException(AException).Kind = TFDCommandExceptionKind.
+      ekUKViolated) then
+    begin
+      raise Exception.Create('O codigo do Pais ja está cadastrado!');
+    end;
+
+    if (EFDDBEngineException(AException).Kind = TFDCommandExceptionKind.
+      ekFKViolated) then
+    begin
+      raise Exception.Create
+        ('Está acão não é possivel pois existem registros dependentes');
+    end;
+  end;
+end;
+
+procedure TDmDados.QryTaticaAfterInsert(DataSet: TDataSet);
+begin
+  //QryTaticaTAT_CODIGO.AsInteger := GerarCodigo('Seq_tat_codigo');
+end;
+
+procedure TDmDados.QryTaticaUpdateError(ASender: TDataSet;
+  AException: EFDException; ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+  var AAction: TFDErrorAction);
+begin
+  if AException is EFDDBEngineException then
+  begin
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekUKViolated) then
+    begin
+      raise Exception.Create('O codigo da tatica já está cadastrado');
+    end;
+
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekFKViolated) then
+    begin
+      raise Exception.Create('Está acão não é possivel pois existem registros dependentes');
+    end;
+  end;
+end;
+
+procedure TDmDados.QryTecnicoAfterInsert(DataSet: TDataSet);
+begin
+  //QryTecnicoTEC_CODIGO.AsInteger := GerarCodigo('SEQ_TEC_CODIGO');
+end;
+
+procedure TDmDados.QryTecnicoUpdateError(ASender: TDataSet;
+  AException: EFDException; ARow: TFDDatSRow; ARequest: TFDUpdateRequest;
+  var AAction: TFDErrorAction);
+begin
+  if AException is EFDDBEngineException then
+  begin
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekUKViolated) then
+    begin
+      raise Exception.Create('O codigo do tecnico já está cadastrado');
+    end;
+
+    if (EFDDBEngineException(AException).Kind =
+    TFDCommandExceptionKind.ekFKViolated) then
+    begin
+      raise Exception.Create('Está acão não é possivel pois existem registros dependentes');
+    end;
+  end;
+end;
+end.
