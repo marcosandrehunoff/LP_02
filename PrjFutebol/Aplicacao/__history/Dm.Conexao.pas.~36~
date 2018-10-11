@@ -18,7 +18,6 @@ type
     FDMoniFlatFileClientLink1: TFDMoniFlatFileClientLink;
     FDFBNBackup: TFDFBNBackup;
     FDFBNRestore: TFDFBNRestore;
-
     procedure DataModuleDestroy(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
   private
@@ -36,30 +35,23 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-
-
 procedure TDmConexao.DataModuleCreate(Sender: TObject);
 VAR
   vDBIniFile: TIniFile;
 begin
   vDBIniFile := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'DBConexao.ini');
-
+  vDBIniFile.WriteString('Configuracao', 'Database', (ExtractFilePath(ParamStr(0)) + 'FUTEBOL.FDB'));
   try
     FDConexao.Connected := False;
-    FDConexao.Params.Values['Database'] := vDBIniFile.ReadString('Configuração',
-      'Database', '');
+    FDConexao.Params.Values['Database'] := vDBIniFile.ReadString('Configuracao', 'Database', '');
 
-    FDFBNBackup.Database := vDBIniFile.ReadString('Configuracao',
-      'Database', '');
-    FDFBNBackup.BackupFile := vDBIniFile.ReadString('Configuracao',
-      'BackupFile', '');
+    FDFBNBackup.Database := vDBIniFile.ReadString('Configuracao', 'Database', '');
+    FDFBNBackup.BackupFile := vDBIniFile.ReadString('Configuracao', 'BackupFile', '');
 
-    FDFBNRestore.Database := vDBIniFile.ReadString('Configuracao',
-      'Database', '');
-    FDFBNRestore.BackupFiles.Text := vDBIniFile.ReadString('Configuracao',
-      'BackupFile', '');
+    FDFBNRestore.Database := vDBIniFile.ReadString('Configuracao', 'Database', '');
+    FDFBNRestore.BackupFiles.Text := vDBIniFile.ReadString('Configuracao', 'BackupFile', '');
 
-    FDConexao.Connected := True;
+    FDConexao.Connected := true ;
   finally
     FreeAndNil(vDBIniFile);
   end;

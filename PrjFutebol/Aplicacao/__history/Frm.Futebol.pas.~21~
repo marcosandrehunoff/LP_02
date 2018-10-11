@@ -27,7 +27,7 @@ type
     procedure Sair1Click(Sender: TObject);
     procedure Backup1Click(Sender: TObject);
     procedure Restore1Click(Sender: TObject);
-
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public

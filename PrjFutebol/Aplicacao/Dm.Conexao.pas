@@ -35,33 +35,28 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 {$R *.dfm}
 
-
-
 procedure TDmConexao.DataModuleCreate(Sender: TObject);
 VAR
   vDBIniFile: TIniFile;
 begin
-  vDBIniFile := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'DBConexao.ini');
 
   try
     FDConexao.Connected := False;
-    FDConexao.Params.Values['Database'] := vDBIniFile.ReadString('Configuracao',
-      'Database', '');
 
-    FDFBNBackup.Database := vDBIniFile.ReadString('Configuracao',
-      'Database', '');
-    FDFBNBackup.BackupFile := vDBIniFile.ReadString('Configuracao',
-      'BackupFile', '');
+    vDBIniFile := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'DBConexao.ini');
+    FDConexao.Params.Values['Database'] := vDBIniFile.ReadString('Configuracao', 'Database', '');
 
-    FDFBNRestore.Database := vDBIniFile.ReadString('Configuracao',
-      'Database', '');
-    FDFBNRestore.BackupFiles.Text := vDBIniFile.ReadString('Configuracao',
-      'BackupFile', '');
+    FDFBNBackup.Database := vDBIniFile.ReadString('Configuracao', 'Database', '');
+    FDFBNBackup.BackupFile := vDBIniFile.ReadString('Configuracao', 'BackupFile', '');
 
-    FDConexao.Connected := True;
+    FDFBNRestore.Database := vDBIniFile.ReadString('Configuracao', 'Database', '');
+    FDFBNRestore.BackupFiles.Text := vDBIniFile.ReadString('Configuracao', 'BackupFile', '');
+
+    FDConexao.Connected := True ;
   finally
     FreeAndNil(vDBIniFile);
   end;
+  FDConexao.Connected := True;
 end;
 
 procedure TDmConexao.DataModuleDestroy(Sender: TObject);

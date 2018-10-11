@@ -8,10 +8,10 @@ object DmConexao: TDmConexao
     Params.Strings = (
       
         'Database=E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\Pr' +
-        'jFutebol\Dados\FUTEBOL.FDB'
-      'User_Name=SYSDBA'
-      'Password=masterkey'
+        'jFutebol\Aplicacao\Win32\Debug\FUTEBOL.FDB'
       'MonitorBy=FlatFile'
+      'User_Name=sysdba'
+      'Password=masterkey'
       'DriverID=FB')
     LoginPrompt = False
     Left = 64
@@ -43,10 +43,10 @@ object DmConexao: TDmConexao
     Password = 'masterkey'
     Database = 
       'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
-      'Dados\futebol.fdb'
+      'Aplicacao\Win32\Debug\FUTEBOL.FDB'
     BackupFile = 
       'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
-      'Aplica\FUTEBOL.fbk'
+      'Aplicacao\Win32\Debug\FUTEBOL.fbk'
     Left = 232
     Top = 96
   end
@@ -56,11 +56,11 @@ object DmConexao: TDmConexao
     Password = 'masterkey'
     Database = 
       'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
-      'Dados\FUTEBOL.fdb'
+      'Aplicacao\Win32\Debug\FUTEBOL.FDB'
     BackupFiles.Strings = (
       
         'E:\Quarto Semestre\Linguagem de Programa'#231#227'o II\LP_02\PrjFutebol\' +
-        'Dados\FUTEBOL.fbk')
+        'Aplicacao\Win32\Debug\FUTEBOL.FBK')
     Left = 232
     Top = 168
   end

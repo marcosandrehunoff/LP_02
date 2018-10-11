@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Frm.Pais, Frm.Tatica,
-  Frm.Tecnico;
+  Frm.Tecnico, Dm.Conexao, Frm.Clube;
 
 type
   TFrmFutebol = class(TForm)
@@ -16,10 +16,17 @@ type
     aticas1: TMenuItem;
     ecnicos1: TMenuItem;
     Clubes1: TMenuItem;
-    Jogador1: TMenuItem;
+    Sair1: TMenuItem;
+    BancodeDados1: TMenuItem;
+    Backup1: TMenuItem;
+    Restore1: TMenuItem;
     procedure Paises1Click(Sender: TObject);
     procedure aticas1Click(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
+    procedure ecnicos1Click(Sender: TObject);
+    procedure Clubes1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
+    procedure Backup1Click(Sender: TObject);
+    procedure Restore1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,10 +50,29 @@ begin
   finally
     FreeAndNil(vFrmtatica);
   end;
-
 end;
 
-procedure TFrmFutebol.FormCreate(Sender: TObject);
+procedure TFrmFutebol.Backup1Click(Sender: TObject);
+begin
+  DmConexao.FDConexao.Connected := false;
+  DeleteFile(DmConexao.FDFBNBackup.BackupFile);
+  DmConexao.FDFBNBackup.Backup;
+  DmConexao.FDConexao.Connected := true;
+end;
+
+procedure TFrmFutebol.Clubes1Click(Sender: TObject);
+var
+  vFrmClube: TFrmClube;
+begin
+  vFrmClube := TFrmClube.Create(nil);
+  try
+    vFrmClube.ShowModal;
+  finally
+    FreeAndNil(vFrmClube);
+  end;
+end;
+
+procedure TFrmFutebol.ecnicos1Click(Sender: TObject);
 var
   vFrmTecnico: TFrmTecnico;
 begin
@@ -70,6 +96,19 @@ begin
     FreeAndNil(vFrmPais);
   end;
 
+end;
+
+procedure TFrmFutebol.Restore1Click(Sender: TObject);
+begin
+  DmConexao.FDConexao.Connected := false;
+  DeleteFile(DmConexao.FDFBNRestore.Database );
+  DmConexao.FDFBNRestore.Restore;
+  DmConexao.FDConexao.Open();
+end;
+
+procedure TFrmFutebol.Sair1Click(Sender: TObject);
+begin
+ close;
 end;
 
 end.
